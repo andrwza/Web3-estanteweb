@@ -12,9 +12,13 @@
     <#else>
         <ul>
         <#list livros as livro>
-            <li><a href="/livros/${livro.id?c}">${livro.titulo}</a>, de ${livro.autor} (R$ ${livro.preco?c})
-                — <a href="/livros/${livro.id?c}/editar">Editar</a>
-                | <a href="/livros/${livro.id?c}/remover">Remover</a>
+            <li>${livro.titulo}, de ${livro.autor} (R$ ${livro.preco?c})
+                — <a href="/livros/${livro.id?c}">Detalhes</a>
+                | <a href="/livros/${livro.id?c}/editar">Editar</a>
+                <form method="post" action="/livros/${livro.id?c}/remover" style="display:inline"
+                      onsubmit="return confirm('Remover este livro do acervo? Essa ação não pode ser desfeita.');">
+                    | <button type="submit">Remover</button>
+                </form>
             </li>
         </#list>
         </ul>
