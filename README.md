@@ -1,10 +1,6 @@
 # 📚 EstanteWeb
 
-> Livros usados com história.
-
-O EstanteWeb é um sistema web de uma livraria de livros usados. Pelo navegador dá para ver o acervo e cadastrar, corrigir e remover livros. Os leitores também podem sugerir títulos que gostariam de encontrar na estante.
-
-Fiz o projeto para estudar desenvolvimento web com **Java e Spring Boot**: rotas, formulários, templates, validação e acesso a banco de dados.
+O EstanteWeb é um sistema web de uma livraria de livros usados. Pelo navegador dá para ver o acervo e cadastrar, corrigir e remover livros. Os leitores também podem sugerir livros.
 
 ## ✨ O que o sistema faz
 
@@ -88,13 +84,8 @@ src/main/
 2. Ajuste o usuário e a senha do MySQL em `src/main/resources/application.properties`, se necessário.
 3. Rode a aplicação:
    ```bash
-   ./mvnw spring-boot:run        # Linux/macOS
-   mvnw.cmd spring-boot:run      # Windows
+   mvn spring-boot:run      # Windows
    ```
 4. Acesse **http://localhost:8080/livros/html** 🎉
 
 Na primeira execução, o Flyway cria as tabelas `livro` e `sugestao` e já cadastra alguns livros de exemplo.
-
----
-
-Feito por **Andreza Damasceno** 💜
