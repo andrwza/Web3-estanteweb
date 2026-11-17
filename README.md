@@ -2,7 +2,7 @@
 
 O EstanteWeb é um sistema web de uma livraria de livros usados. Pelo navegador dá para ver o acervo e cadastrar, corrigir e remover livros. Os leitores também podem sugerir livros.
 
-## ✨ O que o sistema faz
+## 💻 O que o sistema faz
 
 ### Acervo de livros
 - **Listar** todos os livros, com opção de ordenar por título, autor, ano ou preço
@@ -22,7 +22,7 @@ O EstanteWeb é um sistema web de uma livraria de livros usados. Pelo navegador 
 - O preço precisa ser maior que zero
 - Quando algo está errado, o formulário volta com uma mensagem de erro e com o que já tinha sido digitado
 
-## 🛠️ Tecnologias
+## 🌐​ Tecnologias
 
 | Tecnologia | Para quê |
 |---|---|
@@ -71,9 +71,7 @@ src/main/
 | GET | `/sugestoes` | Lista as sugestões recebidas |
 | GET | `/contato` | Formulário de contato |
 
-> 💡 Ações que **alteram dados** (cadastrar, editar, remover) usam **POST** e ações que só **leem** usam **GET**. Assim, ninguém apaga um livro só por abrir um link.
-
-## 🚀 Como rodar
+## 💡 Como rodar
 
 **Pré-requisitos:** Java 21 e MySQL rodando na porta `3306`.
 
