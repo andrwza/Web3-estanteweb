@@ -6,6 +6,8 @@
 <p>Ano: ${livro.ano?c}</p>
 <p>Preço: R$ ${livro.preco?c}</p>
 
+<#-- Editar e remover só aparecem para quem está logado -->
+<#if usuarioLogado??>
 <p>
     <a href="/livros/${livro.id?c}/editar">Editar</a>
 </p>
@@ -15,5 +17,6 @@
       onsubmit="return confirm('Remover este livro do acervo? Essa ação não pode ser desfeita.');">
     <button type="submit">Remover</button>
 </form>
+</#if>
 
 <p><a href="/livros">Voltar para o acervo</a></p>

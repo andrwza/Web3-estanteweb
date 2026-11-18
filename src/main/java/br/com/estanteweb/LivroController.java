@@ -2,6 +2,8 @@ package br.com.estanteweb;
 
 import java.util.List;
 
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -196,7 +198,12 @@ public class LivroController {
 
     // Só exibe o formulário já preenchido com os dados atuais (GET não grava nada)
     @GetMapping("/livros/{id}/editar")
-    public String editar(@PathVariable Long id, Model model) {
+    public String editar(@PathVariable Long id, Model model, HttpSession session) {
+        // Só quem está logado pode corrigir livros
+        if (session.getAttribute("usuarioLogado") == null) {
+            return "redirect:/login";
+        }
+
         model.addAttribute("livro", buscarOu404(id));
         return "livro-editar";
     }
@@ -208,7 +215,13 @@ public class LivroController {
             @RequestParam String autor,
             @RequestParam int ano,
             @RequestParam double preco,
-            Model model) {
+            Model model,
+            HttpSession session) {
+
+        // Esconder o link não basta: o POST também precisa conferir a sessão
+        if (session.getAttribute("usuarioLogado") == null) {
+            return "redirect:/login";
+        }
 
         buscarOu404(id);
 
